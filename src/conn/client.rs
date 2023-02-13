@@ -257,7 +257,7 @@ impl<E: From<conn::Error> + From<serde_json::Error>> RequestClient<E> {
         &'client self,
         endpoint: impl AsRef<str> + 'client,
         body: Payload<B>,
-    ) -> Result<impl AsyncRead + AsyncWrite + 'client, E>
+    ) -> Result<impl AsyncRead + AsyncWrite, E>
     where
         B: Into<Body> + 'client,
     {
